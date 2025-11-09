@@ -17,10 +17,10 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	size_t	len;
 	size_t	j;
 
+	if (dest == NULL || src == NULL)
+	return (0);
 	len = ft_strlen(src);
 	j = 0;
-	if (dest == NULL || src == NULL)
-		return (0);
 	if (dest == src)
 		return (len);
 	if (size == 0)
@@ -32,4 +32,13 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	}
 	dest[j] = '\0';
 	return (len);
+}
+
+#include <string.h>
+
+int main()
+{
+	char *p = NULL;
+	 ft_strlcpy(p,"helooooo",-100);
+	//strlcpy(p,"nudasdasd",555555);
 }
